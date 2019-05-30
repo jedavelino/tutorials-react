@@ -23,12 +23,14 @@ export default class SingleRoom extends Component {
     const room = getRoom(this.state.slug);
 
     if (!room) {
-      return <div className="error">
-        <h3>no room found</h3>
-        <Link to="/rooms" className="btn-primary">
-          back to rooms
-        </Link>
-      </div>
+      return (
+        <div className="error">
+          <h3>no room found</h3>
+          <Link to="/rooms" className="btn-primary">
+            back to rooms
+          </Link>
+        </div>
+      )
     }
 
     const { name, description, capacity, size, price, extras, breakfast, pets, images } = room;
